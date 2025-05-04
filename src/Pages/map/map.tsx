@@ -11,7 +11,6 @@ import {
   useMap,
 } from "react-leaflet";
 
-import Logo from "../../../img/aiko.png";
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Progress } from "../../components/ui/progress";
@@ -229,7 +228,6 @@ const Map = () => {
 
   return (
     <div className="flex h-screen flex-col items-center justify-center">
-      <img src={Logo} alt="Logo" width={200} height={200} />
       <h1 className="mb-6 text-center text-4xl font-bold text-gray-800">
         Equipamentos Localizados
       </h1>
