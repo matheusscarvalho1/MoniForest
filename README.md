@@ -1,4 +1,4 @@
-````markdown
+
 ## Monitoramento Florestal em Tempo Real
 
 Bem-vindo ao projeto _Florestal Monitor_, uma aplicação web que reúne dados geográficos e operacionais de equipamentos em operações florestais, proporcionando a gestores e equipes de campo uma visão unificada e atualizada dos ativos.
@@ -82,7 +82,7 @@ Simulação de API local via JSON facilita testes sem backend; a transição par
    ```bash
    git clone https://github.com/seu-usuario/florestal-monitor.git
    cd florestal-monitor
-````
+```
 
 2. **Instale dependências**
 
@@ -113,8 +113,10 @@ Simulação de API local via JSON facilita testes sem backend; a transição par
 
 ### 🖼️ Demonstração Visual
 
-![Mapa de Ativos](img/demo-map.png)
 *Mapa interativo com marcadores e pop-ups detalhados.*
+
+![image](https://github.com/user-attachments/assets/a7985df4-6176-4bac-bfc1-5b22aeca1024)
+
 
 ---
 
@@ -125,4 +127,4 @@ Este projeto demonstra habilidades em React moderno, bibliotecas de mapeamento e
 <div align="center">
   <strong>Obrigado pela visita ao meu portfólio!</strong>
 </div>
-```
+
