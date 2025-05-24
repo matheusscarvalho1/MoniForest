@@ -1,7 +1,7 @@
 
 ## Monitoramento Florestal em Tempo Real
 
-Bem-vindo ao projeto _Florestal Monitor_, uma aplicação web que reúne dados geográficos e operacionais de equipamentos em operações florestais, proporcionando a gestores e equipes de campo uma visão unificada e atualizada dos ativos.
+Bem-vindo ao projeto _MoniForest_, uma aplicação web que reúne dados geográficos e operacionais de equipamentos em operações florestais, proporcionando a gestores e equipes de campo uma visão unificada e atualizada dos ativos.
 
 ---
 
