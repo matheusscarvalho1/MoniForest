@@ -1,5 +1,5 @@
 
-## Monitoramento Florestal em Tempo Real
+## Monitoramento Florestal - _MoniForest_
 
 Bem-vindo ao projeto _MoniForest_, uma aplicação web que reúne dados geográficos e operacionais de equipamentos em operações florestais, proporcionando a gestores e equipes de campo uma visão unificada e atualizada dos ativos.
 
@@ -9,7 +9,7 @@ Bem-vindo ao projeto _MoniForest_, uma aplicação web que reúne dados geográf
 
 Disponibilizar um painel interativo para:
 
-- **Localizar equipamentos** no mapa em tempo real.  
+- **Localizar equipamentos** no mapa.  
 - **Visualizar status operacionais** (Operando, Manutenção, Parado).  
 - **Analisar produtividade diária** de cada máquina.  
 - **Consultar histórico de eventos** para diagnósticos e planejamento de manutenção.  
