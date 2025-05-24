@@ -1,4 +1,4 @@
-import { Homepage } from "./pages/homepage/homepage";
+import { Homepage } from "./Pages/homepage/homepage";
 
 function App() {
   return (

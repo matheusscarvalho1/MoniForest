@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 import equipmentModels from "../../data/equipmentModel.json";
-import type { IEquipmentModel } from "../pages/map/interface/Imap";
+import type { IEquipmentModel } from "../Pages/map/interface/Imap";
 
 const equipmentTypeColors: Record<string, string> = {
   "Caminhão de carga": "#ff0707",
