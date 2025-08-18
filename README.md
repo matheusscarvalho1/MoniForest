@@ -124,6 +124,13 @@ Simulação de API local via JSON facilita testes sem backend; a transição par
 
 Este projeto demonstra habilidades em React moderno, bibliotecas de mapeamento e boas práticas de UX/UI. Em produção, basta substituir a simulação JSON por chamadas a APIs reais para garantir escalabilidade e segurança.
 
+## 👨‍💻 Desenvolvido por
+
+**Matheus Carvalho**
+
+- LinkedIn: [@matheusscarvalho](https://www.linkedin.com/in/matheusscarvalho/)
+- GitHub: [@matheusscarvalho1](https://github.com/matheusscarvalho1)
+
 <div align="center">
   <strong>Obrigado pela visita ao meu portfólio!</strong>
 </div>
