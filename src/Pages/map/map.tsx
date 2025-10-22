@@ -1,6 +1,6 @@
 import "leaflet/dist/leaflet.css";
 
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import {
   MapContainer,
@@ -22,6 +22,13 @@ import {
   SelectValue,
 } from "../../components/ui/select";
 import { getEquipmentIcon } from "../../icons/icons";
+
+import equipmentPositionHistory from "../../data/equipmentPositionHistory.json";
+import equipmentStateHistory from "../../data/equipmentStateHistory.json";
+import equipmentState from "../../data/equipmentState.json";
+import equipmentList from "../../data/equipment.json";
+import equipmentModels from "../../data/equipmentModel.json";
+
 import {
   IEquipment,
   IEquipmentModel,
@@ -120,48 +127,26 @@ const Map = () => {
   const [stateHistory, setStateHistory] = useState<IEquipmentStateHistory[]>(
     [],
   );
-  const [equipmentStatus, setEquipmentStatus] = useState<IEquipmentState[]>([]);
-  const [equipmentList, setEquipmentList] = useState<IEquipment[]>([]);
-  const [equipmentModels, setEquipmentModel] = useState<IEquipmentModel[]>([]);
+  const [equipmentStatusState, setEquipmentStatusState] = useState<IEquipmentState[]>([]);
+  const [equipmentListState, setEquipmentListState] = useState<IEquipment[]>([]);
+  const [equipmentModelsState, setEquipmentModelsState] = useState<IEquipmentModel[]>([]);
   const [filterStatus, setFilterStatus] = useState<string>("todos");
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [
-          positionsRes,
-          statesHistoryRes,
-          statesRes,
-          equipmentRes,
-          equipmentModelRes,
-        ] = await Promise.all([
-          axios.get<IEquipmentPositionHistory[]>(
-            "/data/equipmentPositionHistory.json",
-          ),
-          axios.get<IEquipmentStateHistory[]>(
-            "/data/equipmentStateHistory.json",
-          ),
-          axios.get<IEquipmentState[]>("/data/equipmentState.json"),
-          axios.get<IEquipment[]>("/data/equipment.json"),
-          axios.get<IEquipmentModel[]>("data/equipmentModel.json"),
-        ]);
-
-        setMapPosition(positionsRes.data);
-        setStateHistory(statesHistoryRes.data);
-        setEquipmentStatus(statesRes.data);
-        setEquipmentModel(equipmentModelRes.data);
-        setEquipmentList(equipmentRes.data);
-      } catch (err) {
-        setError("Erro ao carregar dados dos equipamentos");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  try {
+    setMapPosition(equipmentPositionHistory);
+    setStateHistory(equipmentStateHistory);
+    setEquipmentStatusState(equipmentState);
+    setEquipmentModelsState(equipmentModels);
+    setEquipmentListState(equipmentList);
+  } catch (err) {
+    setError("Erro ao carregar dados dos equipamentos");
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+}, []);
 
   if (loading) return <Progress value={33} />;
   if (error) return <p>{error}</p>;
@@ -182,7 +167,7 @@ const Map = () => {
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
       )[0];
 
-    const statusInfo = equipmentStatus.find(
+    const statusInfo = equipmentStatusState.find(
       (item) => item.id === latestValidState?.equipmentStateId,
     );
 
@@ -207,7 +192,7 @@ const Map = () => {
       productivity: calculateEquipmentProductivityPercentage(
         equipment.equipmentId,
         stateHistory,
-        equipmentStatus,
+        equipmentStatusState,
       ),
     };
   });
@@ -252,7 +237,7 @@ const Map = () => {
             </SelectTrigger>
             <SelectContent className="bg-white">
               <SelectItem value="todos">Todos os status</SelectItem>
-              {equipmentStatus.map((state) => (
+              {equipmentStatusState.map((state) => (
                 <SelectItem
                   key={state.id}
                   value={state.name}
@@ -328,7 +313,7 @@ const Map = () => {
                               new Date(a.date).getTime(),
                           )[0];
 
-                        const stateDetails = equipmentStatus.find(
+                        const stateDetails = equipmentStatusState.find(
                           (s) => s.id === latestValidState?.equipmentStateId,
                         );
 
