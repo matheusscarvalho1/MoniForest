@@ -171,11 +171,11 @@ const Map = () => {
       (item) => item.id === latestValidState?.equipmentStateId,
     );
 
-    const equipmentInfo = equipmentList.find(
+    const equipmentInfo = equipmentListState.find(
       (item) => item.id === equipment.equipmentId,
     );
 
-    const modelInfo = equipmentModels.find(
+    const modelInfo = equipmentModelsState.find(
       (item) => item.id === equipmentInfo?.equipmentModelId,
     );
 
