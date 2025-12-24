@@ -1,6 +1,5 @@
 import "leaflet/dist/leaflet.css";
 
-
 import { useEffect, useState } from "react";
 import {
   MapContainer,
@@ -21,14 +20,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components/ui/select";
-import { getEquipmentIcon } from "../../icons/icons";
-
-import equipmentPositionHistory from "../../data/equipmentPositionHistory.json";
-import equipmentStateHistory from "../../data/equipmentStateHistory.json";
-import equipmentState from "../../data/equipmentState.json";
 import equipmentList from "../../data/equipment.json";
 import equipmentModels from "../../data/equipmentModel.json";
-
+import equipmentPositionHistory from "../../data/equipmentPositionHistory.json";
+import equipmentState from "../../data/equipmentState.json";
+import equipmentStateHistory from "../../data/equipmentStateHistory.json";
+import { getEquipmentIcon } from "../../icons/icons";
 import {
   IEquipment,
   IEquipmentModel,
@@ -216,8 +213,8 @@ const Map = () => {
       <h1 className="mb-6 text-center text-4xl font-bold text-gray-800">
         Equipamentos Localizados
       </h1>
-      <div className="mt-3 flex h-[80vh] w-full max-w-[1200px] flex-row gap-6">
-        <div className="flex w-[250px] flex-col gap-4 rounded-xl bg-white p-4 shadow">
+      <div className="mt-3 flex h-[80vh] w-full max-w-[1200px] flex-col gap-6 md:flex-row">
+        <div className="flex w-full flex-col gap-4 rounded-xl bg-white p-4 shadow md:w-[250px]">
           <h2 className="text-xl font-semibold text-gray-700">
             Filtros ({filteredEquipments.length})
           </h2>
@@ -396,7 +393,6 @@ const Map = () => {
                     <strong>Latitude:</strong> {item.lat}
                     <br />
                     <strong>Longitude:</strong> {item.lon}
-                    <br />
                   </div>
                 </Tooltip>
               </Marker>
